@@ -1,5 +1,9 @@
 # กฎหมายไทยใน Git
 
+[![validate](https://github.com/open-thai-law/laws/actions/workflows/validate.yml/badge.svg)](https://github.com/open-thai-law/laws/actions/workflows/validate.yml)
+[![release](https://img.shields.io/github/v/release/open-thai-law/laws?label=release)](https://github.com/open-thai-law/laws/releases/latest)
+[![license: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-lightgrey.svg)](LICENSE)
+
 พระราชบัญญัติ พระราชกำหนด ประมวลกฎหมาย รัฐธรรมนูญ และประกาศคณะปฏิวัติ / คสช. **1,899 ฉบับ** เก็บเป็นไฟล์ Markdown หนึ่งไฟล์ต่อหนึ่งฉบับ ทุกครั้งที่กฎหมายถูกแก้คือหนึ่ง commit ลงวันที่ที่มีผลบังคับใช้ ผู้เขียน commit คือผู้ตรากฎหมายฉบับที่แก้
 
 ใช้ git ดูได้ว่ามาตราไหนแก้เมื่อไร แก้โดยกฎหมายฉบับไหน และใครเป็นผู้ตรา
@@ -27,6 +31,15 @@ git blame "acts/พ.ร.บ.ให้ใช้บทบัญญัติแห�
 git shortlog -sn
 ```
 
+ตัวอย่างเพิ่มเติมใน [`examples/`](examples):
+
+```sh
+python3 examples/most_amended.py 10              # กฎหมายที่ถูกแก้บ่อยที่สุด
+python3 examples/search.py "ข้อมูลส่วนบุคคล"       # มาตราที่พูดถึงคำนี้ ในกฎหมายที่ยังใช้บังคับ
+examples/section-history.sh "acts/พ.ร.บ.ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. ๒๕๕๐.md" ๑๔
+                                                 # ทุกครั้งที่มาตรา ๑๔ ถูกแก้
+```
+
 หรือเปิดไฟล์บน GitHub แล้วกด **History** / **Blame** ได้เลย รายชื่อทุกฉบับอยู่ใน [`index.csv`](index.csv)
 
 ## โครงสร้าง
@@ -34,9 +47,13 @@ git shortlog -sn
 ```
 acts/<ชื่อกฎหมาย พ.ศ. ปี>.md   หนึ่งไฟล์ต่อหนึ่งฉบับ
 index.csv                      ทุกฉบับ: ไฟล์ ชื่อ รหัสกฎหมาย สถานะ วันประกาศ จำนวนเวอร์ชัน ลิงก์
+datapackage.json               คำอธิบายคอลัมน์ของ index.csv (Frictionless Data)
+docs/schema.md                 รูปแบบไฟล์ frontmatter และ commit แบบละเอียด
+examples/                      ตัวอย่างการใช้งาน (Python ไม่ต้องติดตั้งอะไรเพิ่ม, shell)
+scripts/validate.py            ตรวจว่าข้อมูลถูกรูปแบบ รันทุก push
 ```
 
-แต่ละไฟล์:
+แต่ละไฟล์ (รายละเอียดครบใน [docs/schema.md](docs/schema.md)):
 
 ```markdown
 ---
@@ -82,9 +99,13 @@ unofficial: true
 - ตัวบทกฎหมายไม่มีลิขสิทธิ์ตาม [พ.ร.บ.ลิขสิทธิ์ พ.ศ. ๒๕๓๗ มาตรา ๗](acts/พ.ร.บ.ลิขสิทธิ์%20พ.ศ.%20๒๕๓๗.md)
 - ส่วนที่เราจัดทำ (โครงสร้างไฟล์ ประวัติ commit ผู้ตรา `index.csv`) อุทิศเป็นสาธารณสมบัติด้วย [CC0 1.0](LICENSE) ใช้ได้ทุกวัตถุประสงค์ ไม่ต้องขออนุญาต ถ้าอ้างอิงกลับมาจะขอบคุณมาก
 
+## อ้างอิง
+
+กดปุ่ม **Cite this repository** ด้านขวาของหน้า repo หรือใช้ [`CITATION.cff`](CITATION.cff) ระบุ release ที่ใช้ด้วย (ชื่อ tag คือวันที่ดึงข้อมูล เช่น `2026-10-30`) เพื่อให้คนอื่นได้ข้อมูลชุดเดียวกัน
+
 ## ช่วยกัน
 
-เจอข้อความผิด มาตราหาย หรือกฎหมายที่แก้แล้วแต่ที่นี่ยังไม่อัปเดต แจ้งได้ที่ [Issues](../../issues/new/choose) อ่านวิธีใน [CONTRIBUTING.md](CONTRIBUTING.md)
+เจอข้อความผิด มาตราหาย หรือกฎหมายที่แก้แล้วแต่ที่นี่ยังไม่อัปเดต แจ้งได้ที่ [Issues](../../issues/new/choose) อ่านวิธีใน [CONTRIBUTING.md](CONTRIBUTING.md) และ [จรรยาบรรณ](CODE_OF_CONDUCT.md) ช่องโหว่หรือเนื้อหาอันตรายแจ้งแบบส่วนตัวตาม [SECURITY.md](SECURITY.md)
 
 ---
 

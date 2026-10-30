@@ -16,6 +16,7 @@
 ## Pull request
 
 - **รับ:** แก้ README / CONTRIBUTING, ตัวอย่างการใช้งาน, เครื่องมือหรือสคริปต์ที่อ่านข้อมูลนี้ (ใส่ไว้ใน `examples/`)
+- **ก่อนส่ง:** รัน `python3 scripts/validate.py` ให้ผ่าน (ระบบจะรันให้อีกรอบทุก PR) รูปแบบข้อมูลอยู่ใน [docs/schema.md](docs/schema.md)
 - **ไม่รับ:** แก้ไฟล์ใน `acts/` หรือ `index.csv` ตรงๆ (จะถูกเขียนทับ) ให้เปิด issue แทน
 
 ## ไม่ใช่ที่ปรึกษากฎหมาย
@@ -24,8 +25,8 @@ repo นี้เก็บตัวบทอย่างเดียว คำ�
 
 ## มารยาท
 
-คุยกันด้วยข้อเท็จจริงและความสุภาพ ไม่ถกเถียงการเมืองใน issue ผู้ตราใน commit มาจากเอกสารต้นฉบับ ไม่ได้แสดงความเห็นของผู้ดูแล
+ทุกคนในโปรเจกต์นี้ยึด[จรรยาบรรณ (Contributor Covenant)](CODE_OF_CONDUCT.md) คุยกันด้วยข้อเท็จจริงและความสุภาพ ไม่ถกเถียงการเมืองใน issue ผู้ตราใน commit มาจากเอกสารต้นฉบับ ไม่ได้แสดงความเห็นของผู้ดูแล
 
 ---
 
-**English:** Files in `acts/` are generated from the Council of State's database, so please report errors, outdated laws or missing laws as [issues](../../issues/new/choose) with a link to the Royal Gazette rather than editing them. Pull requests are welcome for docs and examples.
+**English:** Files in `acts/` are generated from the Council of State's database, so please report errors, outdated laws or missing laws as [issues](../../issues/new/choose) with a link to the Royal Gazette rather than editing them. Pull requests are welcome for docs and examples; run `python3 scripts/validate.py` first. See the [schema](docs/schema.md) and the [Code of Conduct](CODE_OF_CONDUCT.md).

@@ -1,0 +1,36 @@
+name: ประวัติผิด
+description: ผู้ตรา (author) วันที่ หรือข้อความของ commit ไม่ถูกต้อง
+title: "[ประวัติผิด] "
+labels: [history-error]
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: commit
+      description: hash หรือลิงก์ของ commit
+    validations:
+      required: true
+  - type: dropdown
+    id: what
+    attributes:
+      label: ส่วนที่ผิด
+      multiple: true
+      options:
+        - ผู้ตรา (author)
+        - วันที่มีผลบังคับใช้
+        - ชื่อกฎหมายที่แก้
+        - เชิงอรรถ / รายการมาตราที่แก้
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: ที่ถูกต้องคือ
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: หลักฐาน
+    validations:
+      required: true

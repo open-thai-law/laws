@@ -4,7 +4,7 @@
   "title": "Thai legislation as a git history (index)",
   "description": "Index of the Thai laws in acts/: one row per law with its file, title, Council of State law code, status, publication date, number of versions and source URL. Unofficial.",
   "homepage": "https://github.com/open-thai-law/laws",
-  "version": "2026-10-30",
+  "version": "2026-10-30.1",
   "keywords": ["Thailand", "law", "legislation", "open data"],
   "licenses": [
     {

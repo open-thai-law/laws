@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "ถ้าใช้ข้อมูลนี้ กรุณาอ้างอิงตามนี้ · If you use this data, please cite it as below."
+type: dataset
+title: "open-thai-law/laws: Thai legislation as a git history"
+abstract: >-
+  Thai primary legislation (acts, codes, constitutions, emergency decrees and
+  orders of revolutionary councils) as one Markdown file per law, with one git
+  commit per amendment dated by when it took effect and authored by the body
+  that enacted it. Converted from the database of the Office of the Council of
+  State. Unofficial.
+authors:
+  - name: "Open Thai Law contributors"
+    website: "https://github.com/open-thai-law"
+repository-code: "https://github.com/open-thai-law/laws"
+url: "https://github.com/open-thai-law/laws"
+license: CC0-1.0
+# Concept DOI: always resolves to the latest release on Zenodo.
+doi: "10.5281/zenodo.23796239"
+version: "2026-10-30.1"
+date-released: "2026-10-30"
+keywords:
+  - Thailand
+  - law
+  - legislation
+  - open data
+  - git
+references:
+  - type: database
+    title: "ระบบค้นหากฎหมาย (Law search system)"
+    authors:
+      - name: "Office of the Council of State (สำนักงานคณะกรรมการกฤษฎีกา)"
+    url: "https://searchlaw.ocs.go.th"

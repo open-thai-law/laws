@@ -1,0 +1,14 @@
+{
+  "upload_type": "dataset",
+  "title": "open-thai-law/laws: Thai legislation as a git history",
+  "description": "Thai primary legislation (acts, codes, constitutions, emergency decrees and orders of revolutionary councils) as one Markdown file per law, with one git commit per amendment dated by when it took effect and authored by the body that enacted it. Converted from the database of the Office of the Council of State (searchlaw.ocs.go.th). Unofficial: check the Royal Gazette.",
+  "creators": [{ "name": "Open Thai Law contributors" }],
+  "license": "cc-zero",
+  "access_right": "open",
+  "language": "tha",
+  "keywords": ["Thailand", "law", "legislation", "open data", "git"],
+  "related_identifiers": [
+    { "identifier": "https://github.com/open-thai-law/laws", "relation": "isSupplementTo", "resource_type": "dataset", "scheme": "url" },
+    { "identifier": "https://searchlaw.ocs.go.th", "relation": "isDerivedFrom", "scheme": "url" }
+  ]
+}

@@ -1,0 +1,41 @@
+name: ข้อความผิด
+description: ตัวบทไม่ตรงกับราชกิจจานุเบกษา (ตัวสะกด สระหาย มาตรา/วรรคหาย ลำดับผิด)
+title: "[ข้อความผิด] "
+labels: [text-error]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: ไฟล์
+      description: ชื่อไฟล์หรือลิงก์ไปยังไฟล์ใน acts/
+      placeholder: acts/พ.ร.บ.ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. ๒๕๕๐.md
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: มาตรา / วรรค
+      placeholder: มาตรา ๑๔ วรรคสอง
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: ที่นี่เขียนว่า
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: ต้นฉบับเขียนว่า
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: หลักฐาน
+      description: ลิงก์ราชกิจจานุเบกษา (เล่ม / ตอน / หน้า) หรือหน้ากฤษฎีกา
+    validations:
+      required: true

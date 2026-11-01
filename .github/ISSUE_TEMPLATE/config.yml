@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ตรวจกับต้นฉบับ (ราชกิจจานุเบกษา)
+    url: https://ratchakitcha.soc.go.th
+    about: ฉบับทางการ ใช้อ้างอิงทุกครั้ง
+  - name: ระบบค้นหากฎหมายของกฤษฎีกา
+    url: https://searchlaw.ocs.go.th
+    about: ฉบับรวมแก้ไขและประวัติของกฎหมาย

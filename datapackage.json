@@ -1,0 +1,44 @@
+{
+  "profile": "tabular-data-package",
+  "name": "open-thai-law-laws",
+  "title": "Thai legislation as a git history (index)",
+  "description": "Index of the Thai laws in acts/: one row per law with its file, title, Council of State law code, status, publication date, number of versions and source URL. Unofficial.",
+  "homepage": "https://github.com/open-thai-law/laws",
+  "version": "2026-11-01.1",
+  "keywords": ["Thailand", "law", "legislation", "open data"],
+  "licenses": [
+    {
+      "name": "CC0-1.0",
+      "path": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "title": "Creative Commons Zero v1.0 Universal"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Office of the Council of State, law search system",
+      "path": "https://searchlaw.ocs.go.th"
+    }
+  ],
+  "resources": [
+    {
+      "profile": "tabular-data-resource",
+      "name": "index",
+      "path": "index.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "file", "type": "string", "description": "Path of the law's Markdown file", "constraints": { "required": true, "unique": true, "pattern": "acts/.+\\.md" } },
+          { "name": "title", "type": "string", "description": "Title of the law in Thai", "constraints": { "required": true } },
+          { "name": "law_code", "type": "string", "description": "Council of State law code; the stable identifier", "constraints": { "required": true, "unique": true } },
+          { "name": "status", "type": "string", "description": "Status when the data was fetched", "constraints": { "required": true, "enum": ["in-force", "repealed"] } },
+          { "name": "published", "type": "date", "format": "%Y-%m-%d", "description": "Date published in the Royal Gazette (Gregorian)", "constraints": { "required": true } },
+          { "name": "versions", "type": "integer", "description": "Commits that changed the file: the law as enacted plus each amendment", "constraints": { "required": true, "minimum": 1 } },
+          { "name": "url", "type": "string", "format": "uri", "description": "The law's page on searchlaw.ocs.go.th", "constraints": { "required": true } }
+        ],
+        "primaryKey": ["law_code"]
+      }
+    }
+  ]
+}

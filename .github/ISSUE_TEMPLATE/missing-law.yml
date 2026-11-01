@@ -1,0 +1,32 @@
+name: ขอเพิ่มกฎหมาย
+description: กฎหมายที่ยังไม่มีใน repo
+title: "[ขอเพิ่ม] "
+labels: [missing-law]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: ชื่อกฎหมาย
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: ประเภท
+      options:
+        - พระราชบัญญัติ / ประมวลกฎหมาย / รัฐธรรมนูญ
+        - พระราชกำหนด
+        - พระราชกฤษฎีกา
+        - กฎกระทรวง / ประกาศกระทรวง / ระเบียบ
+        - อื่น ๆ
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: ลิงก์ราชกิจจานุเบกษาหรือกฤษฎีกา
+  - type: textarea
+    id: why
+    attributes:
+      label: อยากใช้ทำอะไร (ไม่บังคับ)
+      description: ช่วยให้เราจัดลำดับว่าจะเพิ่มอะไรก่อน
